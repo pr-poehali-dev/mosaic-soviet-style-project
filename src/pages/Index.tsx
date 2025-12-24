@@ -90,7 +90,7 @@ const Index = () => {
             </div>
             <div className="hover-scale">
               <img
-                src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/files/0209f95c-f286-44f4-85c3-2d0351228e1c.jpg"
+                src="https://cdn.poehali.dev/files/5359411705970101574.jpg"
                 alt="Мозаика Завоевание космоса в Плавильне"
                 className="rounded-lg shadow-2xl w-full"
               />
