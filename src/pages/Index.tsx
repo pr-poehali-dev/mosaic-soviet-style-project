@@ -318,14 +318,25 @@ const Index = () => {
 
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
             {[
-              { icon: 'MapPin', label: 'Местоположение', value: 'Москва, Суперметалл' },
-              { icon: 'Phone', label: 'Телефон', value: '+7 (XXX) XXX-XX-XX' },
-              { icon: 'Mail', label: 'Email', value: 'savina@example.com' },
+              { icon: 'MapPin', label: 'Местоположение', value: 'Москва, Суперметалл', link: null },
+              { icon: 'Phone', label: 'Телефон', value: '+7 (920) 751-75-15', link: 'tel:+79207517515' },
+              { icon: 'Send', label: 'Telegram', value: '@sav_ingart', link: 'https://t.me/sav_ingart' },
             ].map((contact, idx) => (
               <div key={idx} className="p-4">
                 <Icon name={contact.icon} size={32} className="mx-auto mb-3 text-primary" />
                 <p className="text-sm text-muted-foreground mb-1">{contact.label}</p>
-                <p className="font-semibold text-foreground">{contact.value}</p>
+                {contact.link ? (
+                  <a 
+                    href={contact.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-semibold text-foreground hover:text-primary transition-colors"
+                  >
+                    {contact.value}
+                  </a>
+                ) : (
+                  <p className="font-semibold text-foreground">{contact.value}</p>
+                )}
               </div>
             ))}
           </div>
