@@ -18,12 +18,12 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-primary">Космос • Челябинск</h1>
+          <h1 className="text-2xl font-bold text-primary">Завоевание космоса</h1>
           <div className="hidden md:flex gap-6">
-            {['История', 'Герои', 'Процесс', 'Галерея', 'Контакты'].map((item, idx) => (
+            {['О панно', 'Процесс', 'Вдохновение', 'Художник'].map((item, idx) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(['history', 'heroes', 'process', 'gallery', 'contact'][idx])}
+                onClick={() => scrollToSection(['about', 'process', 'inspiration', 'contact'][idx])}
                 className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
               >
                 {item}
@@ -43,52 +43,55 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20" />
         <div className="container mx-auto px-4 z-10 text-center fade-in">
           <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Завоевание космоса<br />Челябинск, 1976
+            Завоевание космоса
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Монументальное панно площадью 252 м² на стене Политехнического колледжа. Объект культурного наследия
+          <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
+            Авторская мозаика в пространстве «Плавильня», Москва
+          </p>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Художник: Инга Савина
           </p>
           <Button
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg"
-            onClick={() => scrollToSection('history')}
+            onClick={() => scrollToSection('about')}
           >
-            Узнать историю <Icon name="ChevronDown" size={20} className="ml-2" />
+            Узнать больше <Icon name="ChevronDown" size={20} className="ml-2" />
           </Button>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      <section id="history" className="py-20 bg-card">
+      <section id="about" className="py-20 bg-card">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="fade-in">
-              <h3 className="text-4xl font-bold mb-6 text-primary">История создания</h3>
+              <h3 className="text-4xl font-bold mb-6 text-primary">О панно</h3>
               <div className="space-y-4 text-lg">
                 <p>
-                  Панно «Завоевание космоса» открыто 17 апреля 1976 года к 15-летию полёта Гагарина на стене Политехнического колледжа на ул. Гагарина, 17 в Челябинске.
+                  Мозаика «Завоевание космоса» размером 2,85 × 1,80 м создана специально для пространства «Плавильня» в старых цехах Суперметалла в Москве.
                 </p>
                 <p>
-                  Автор — художник Владимир Герасимович Мишин. Эскиз панно был его дипломной работой. Масштабное произведение площадью 252 м² занимает торец трёхэтажного корпуса.
+                  Задача стояла создать произведение, которое бы органично вписалось в индустриальную атмосферу — так, будто оно находилось здесь давно и было обнаружено при реконструкции.
                 </p>
                 <p>
-                  Мишин разделил картину на 396 квадратных блоков (12 в высоту, 33 в ширину), каждый фрагмент перерисовал на отдельный лист картона в натуральную величину. Работа заняла ровно год, а подготовка — ещё 4 года.
+                  Художник Инга Савина создала авторскую интерпретацию космической темы, объединив героическую эстетику советской эпохи с современным художественным видением.
                 </p>
-                <p className="text-sm text-muted-foreground">
-                  Решением Челябинского облисполкома №396 от 16.09.1985 панно внесено в реестр объектов культурного наследия регионального значения.
+                <p>
+                  Работа заняла 2 месяца. Фигуры выполнены из смальты, фон — из керамической мозаики.
                 </p>
               </div>
               <div className="mt-8 p-6 bg-primary/10 border-l-4 border-primary rounded-r">
-                <p className="text-sm font-semibold text-primary mb-2">ЗАМЫСЕЛ АВТОРА</p>
+                <p className="text-sm font-semibold text-primary mb-2">ЗАМЫСЕЛ</p>
                 <p className="italic">
-                  «Завоевание космоса — это не только полёт к звёздам, но и огромная подготовительная работа учёных, инженеров, конструкторов»
+                  Создать эффект «археологической находки» — панно, которое словно всегда было частью этого пространства
                 </p>
               </div>
             </div>
             <div className="hover-scale">
               <img
-                src="https://cdn.poehali.dev/files/панно оригинал.jpg"
-                alt="Панно Завоевание космоса в Челябинске"
+                src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/files/0209f95c-f286-44f4-85c3-2d0351228e1c.jpg"
+                alt="Мозаика Завоевание космоса в Плавильне"
                 className="rounded-lg shadow-2xl w-full"
               />
             </div>
@@ -96,56 +99,18 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="heroes" className="py-20 bg-background">
+      <section id="process" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Герои панно</h3>
-          <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Прототипы героев панно — великие люди, открывшие человечеству дорогу в космос. Художник внимательно изучал фотографии, добиваясь портретного сходства
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Юрий Гагарин',
-                desc: 'Первый человек в космосе. 12 апреля 1961 года совершил орбитальный полёт на корабле «Восток-1». Центральная фигура композиции.',
-                icon: 'Rocket',
-              },
-              {
-                title: 'Константин Циолковский',
-                desc: 'Отец теоретической космонавтики. Обосновал возможность космических полётов, вывел формулу ракеты.',
-                icon: 'BookOpen',
-              },
-              {
-                title: 'Сергей Королёв',
-                desc: 'Главный конструктор космических кораблей. Под его руководством создан «Восток-1» и первые спутники.',
-                icon: 'Cog',
-              },
-            ].map((hero, idx) => (
-              <Card key={idx} className="hover-scale bg-card border-border">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                    <Icon name={hero.icon} size={32} className="text-primary" />
-                  </div>
-                  <h4 className="text-2xl font-bold mb-3 text-foreground">{hero.title}</h4>
-                  <p className="text-muted-foreground">{hero.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="process" className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-12 text-center text-primary">Техника и материалы</h3>
+          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Процесс создания</h3>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h4 className="text-2xl font-semibold mb-6 text-secondary">Византийская мозаика</h4>
+              <h4 className="text-2xl font-semibold mb-6 text-primary">Материалы и техника</h4>
               <ul className="space-y-4">
                 {[
-                  { name: 'Техника', desc: 'Прямой набор на блоки — византийская мозаика, один из древнейших методов' },
-                  { name: 'Смальта', desc: 'Многоцветное стекло десятков оттенков, заказанное на заводе по эскизам художника' },
-                  { name: 'Гранит', desc: 'Охристый, розовый, светло- и тёмно-серый — природный камень для фона и деталей' },
-                  { name: 'Площадь', desc: '252 квадратных метра — размер всей композиции на торце здания' },
+                  { name: 'Смальта', desc: 'Цветное стекло для фигур героев космоса — передаёт глубину и объём образов' },
+                  { name: 'Керамическая мозаика', desc: 'Для фона композиции, создаёт динамичную абстрактную структуру' },
+                  { name: 'Размер работы', desc: '2,85 × 1,80 метра — идеально вписывается в интерьер «Плавильни»' },
+                  { name: 'Эффект состаривания', desc: 'Специальные техники для создания ощущения исторической находки' },
                 ].map((material, idx) => (
                   <li key={idx} className="flex gap-4 items-start">
                     <div className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
@@ -158,14 +123,14 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-2xl font-semibold mb-6 text-secondary">Этапы работы</h4>
+              <h4 className="text-2xl font-semibold mb-6 text-primary">Этапы работы</h4>
               <div className="space-y-6">
                 {[
-                  { step: '1', title: 'Эскиз и разметка', desc: 'Картина разделена на 396 блоков: 12 в высоту, 33 в ширину' },
-                  { step: '2', title: 'Подготовка картонов', desc: 'Каждый фрагмент перерисован на картон в натуральную величину' },
-                  { step: '3', title: 'Подбор материалов', desc: 'По эскизам подобран гранит и заказана смальта нужных оттенков' },
-                  { step: '4', title: 'Набор мозаики', desc: 'Прямой набор на блоки — каждый элемент установлен вручную' },
-                  { step: '5', title: 'Монтаж', desc: 'Блоки смонтированы на гладкой поверхности торца трёхэтажного здания' },
+                  { step: '1', title: 'Изучение референсов', desc: 'Анализ советских мозаик и выбор вдохновляющих образов' },
+                  { step: '2', title: 'Разработка композиции', desc: 'Создание эскиза под конкретное пространство «Плавильни»' },
+                  { step: '3', title: 'Работа со смальтой', desc: 'Детальная проработка фигур космонавтов и учёных' },
+                  { step: '4', title: 'Керамический фон', desc: 'Создание динамичного абстрактного окружения' },
+                  { step: '5', title: 'Финальная интеграция', desc: 'Монтаж в пространстве с эффектом давней находки' },
                 ].map((stage, idx) => (
                   <div key={idx} className="flex gap-4">
                     <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold flex-shrink-0">
@@ -180,74 +145,146 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12 p-6 bg-primary/5 rounded-lg border border-primary/20">
-            <p className="text-center text-muted-foreground">
-              <strong className="text-primary">Сроки:</strong> Подготовка — 4 года, реализация — 1 год. 
-              <strong className="text-primary ml-4">Открытие:</strong> 17 апреля 1976 года
-            </p>
+          <div className="mt-12 grid md:grid-cols-2 gap-8">
+            <div className="hover-scale">
+              <img
+                src="https://cdn.poehali.dev/files/5359411705970101581.jpg"
+                alt="Процесс создания мозаики"
+                className="rounded-lg shadow-2xl w-full h-auto"
+              />
+              <p className="text-center mt-4 text-sm text-muted-foreground">Фрагменты мозаики в процессе работы</p>
+            </div>
+            <div className="hover-scale">
+              <img
+                src="https://cdn.poehali.dev/files/5359411705970101582.jpg"
+                alt="Детали мозаики"
+                className="rounded-lg shadow-2xl w-full h-auto"
+              />
+              <p className="text-center mt-4 text-sm text-muted-foreground">Работа над деталями композиции</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="gallery" className="py-20 bg-background">
+      <section id="inspiration" className="py-20 bg-card">
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Галерея</h3>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h3 className="text-4xl font-bold mb-8 text-center text-primary">Источник вдохновения</h3>
+          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-lg">
+            Референсом для создания мозаики послужило легендарное панно «Завоевание космоса» Владимира Мишина в Челябинске
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
+            <div>
+              <h4 className="text-2xl font-semibold mb-6 text-secondary">Панно в Челябинске</h4>
+              <div className="space-y-3 text-base">
+                <p><strong className="text-primary">Автор:</strong> Владимир Герасимович Мишин</p>
+                <p><strong className="text-primary">Год:</strong> 1976 (открыто 17 апреля)</p>
+                <p><strong className="text-primary">Место:</strong> Политехнический колледж, ул. Гагарина, 17</p>
+                <p><strong className="text-primary">Площадь:</strong> 252 квадратных метра</p>
+                <p><strong className="text-primary">Техника:</strong> Византийская мозаика прямым набором</p>
+                <p><strong className="text-primary">Материалы:</strong> Многоцветная смальта и гранит (охристый, розовый, серый)</p>
+                <p><strong className="text-primary">Статус:</strong> Объект культурного наследия регионального значения (с 1985)</p>
+              </div>
+              <div className="mt-6 p-4 bg-secondary/10 border-l-4 border-secondary rounded-r">
+                <p className="text-sm italic">
+                  Панно создано к 15-летию полёта Гагарина. Эскиз был дипломной работой художника. 
+                  Композиция разделена на 396 блоков и создавалась в течение года.
+                </p>
+              </div>
+            </div>
+            <div className="hover-scale">
+              <img
+                src="https://cdn.poehali.dev/files/панно оригинал.jpg"
+                alt="Оригинальное панно в Челябинске"
+                className="rounded-lg shadow-2xl w-full"
+              />
+              <p className="text-center mt-4 text-sm text-muted-foreground">Панно на стене Политехнического колледжа</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="hover-scale">
               <img
                 src="https://cdn.poehali.dev/files/панно оригинал1.jpg"
-                alt="Общий вид панно"
-                className="rounded-lg shadow-2xl w-full h-auto"
+                alt="Общий вид челябинского панно"
+                className="rounded-lg shadow-xl w-full"
               />
-              <p className="text-center mt-4 text-sm text-muted-foreground">Общий вид панно на стене колледжа</p>
+              <p className="text-center mt-4 text-sm text-muted-foreground">Полная композиция оригинального панно</p>
             </div>
             <div className="hover-scale">
               <img
                 src="https://cdn.poehali.dev/files/ноги панно.jpg"
-                alt="Фрагмент мозаики — деталь"
-                className="rounded-lg shadow-2xl w-full h-auto"
+                alt="Детали византийской мозаики"
+                className="rounded-lg shadow-xl w-full"
               />
-              <p className="text-center mt-4 text-sm text-muted-foreground">Детали византийской мозаики</p>
+              <p className="text-center mt-4 text-sm text-muted-foreground">Фрагмент византийской мозаики крупным планом</p>
             </div>
           </div>
-          <div className="mt-12 text-center">
-            <h4 className="text-2xl font-bold mb-6 text-foreground">Реинтерпретация в пространстве «Плавильня»</h4>
-            <p className="text-muted-foreground mb-8 max-w-3xl mx-auto">
-              На основе челябинского панно создана авторская мозаика размером 2,85 × 1,80 м для пространства «Плавильня» в Москве. Работа сохраняет дух оригинала
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="hover-scale">
-                <img
-                  src="https://cdn.poehali.dev/files/5359411705970101581.jpg"
-                  alt="Процесс создания новой мозаики"
-                  className="rounded-lg shadow-2xl w-full h-auto"
-                />
-                <p className="text-center mt-4 text-sm text-muted-foreground">Создание новой мозаики — фрагменты на полу</p>
-              </div>
-              <div className="hover-scale">
-                <img
-                  src="https://cdn.poehali.dev/files/5359411705970101582.jpg"
-                  alt="Детали новой мозаики"
-                  className="rounded-lg shadow-2xl w-full h-auto"
-                />
-                <p className="text-center mt-4 text-sm text-muted-foreground">Работа над деталями — смальта и гранит</p>
-              </div>
-            </div>
+
+          <div className="bg-primary/5 p-8 rounded-lg border border-primary/20">
+            <h4 className="text-xl font-semibold mb-4 text-foreground">Почему именно это панно?</h4>
+            <ul className="space-y-3">
+              <li className="flex gap-3">
+                <Icon name="Star" className="text-primary flex-shrink-0 mt-1" size={20} />
+                <span>Монументальность и масштаб — 252 м² чистого вдохновения</span>
+              </li>
+              <li className="flex gap-3">
+                <Icon name="Palette" className="text-primary flex-shrink-0 mt-1" size={20} />
+                <span>Уникальная техника византийской мозаики прямым набором на блоки</span>
+              </li>
+              <li className="flex gap-3">
+                <Icon name="Users" className="text-primary flex-shrink-0 mt-1" size={20} />
+                <span>Герои космоса с портретным сходством — Циолковский, Королёв, Гагарин</span>
+              </li>
+              <li className="flex gap-3">
+                <Icon name="Heart" className="text-primary flex-shrink-0 mt-1" size={20} />
+                <span>Символ эпохи — дипломная работа молодого художника стала культурным наследием</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-card">
+      <section id="contact" className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Свяжитесь с нами</h3>
-          <Card className="bg-background border-border">
+          <h3 className="text-4xl font-bold mb-8 text-center text-secondary">Художник</h3>
+          
+          <Card className="bg-card border-border mb-12">
+            <CardContent className="p-8">
+              <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                <div className="w-32 h-32 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Icon name="User" size={64} className="text-primary" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h4 className="text-3xl font-bold mb-3 text-foreground">Инга Савина</h4>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Художник-мозаичист, специализируется на монументальном искусстве и реинтерпретации советского культурного наследия
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <p className="flex items-center gap-2 justify-center md:justify-start">
+                      <Icon name="Briefcase" size={16} className="text-primary" />
+                      <span>Работы в пространствах Москвы и регионов</span>
+                    </p>
+                    <p className="flex items-center gap-2 justify-center md:justify-start">
+                      <Icon name="Award" size={16} className="text-primary" />
+                      <span>Авторские проекты по реставрации и созданию мозаик</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <h4 className="text-2xl font-bold mb-6 text-center text-foreground">Свяжитесь с художником</h4>
+          
+          <Card className="bg-card border-border">
             <CardContent className="p-8">
               <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
                     Ваше имя
                   </label>
-                  <Input id="name" placeholder="Иван Иванов" className="bg-card border-border" />
+                  <Input id="name" placeholder="Иван Иванов" className="bg-background border-border" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
@@ -257,7 +294,7 @@ const Index = () => {
                     id="email"
                     type="email"
                     placeholder="ivan@example.com"
-                    className="bg-card border-border"
+                    className="bg-background border-border"
                   />
                 </div>
                 <div>
@@ -267,8 +304,8 @@ const Index = () => {
                   <Textarea
                     id="message"
                     rows={5}
-                    placeholder="Расскажите о вашем интересе к проекту..."
-                    className="bg-card border-border"
+                    placeholder="Расскажите о вашем проекте или интересе к работам..."
+                    className="bg-background border-border"
                   />
                 </div>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6">
@@ -278,11 +315,12 @@ const Index = () => {
               </form>
             </CardContent>
           </Card>
+
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
             {[
-              { icon: 'MapPin', label: 'Оригинал', value: 'Челябинск, ул. Гагарина, 17' },
-              { icon: 'Building', label: 'Новая мозаика', value: 'Москва, Суперметалл' },
-              { icon: 'Mail', label: 'Email', value: 'info@plavil.art' },
+              { icon: 'MapPin', label: 'Местоположение', value: 'Москва, Суперметалл' },
+              { icon: 'Phone', label: 'Телефон', value: '+7 (XXX) XXX-XX-XX' },
+              { icon: 'Mail', label: 'Email', value: 'savina@example.com' },
             ].map((contact, idx) => (
               <div key={idx} className="p-4">
                 <Icon name={contact.icon} size={32} className="mx-auto mb-3 text-primary" />
@@ -294,15 +332,13 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-8 border-t border-border bg-background">
+      <footer className="py-8 border-t border-border bg-card">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
           <p className="mb-2">
-            <strong>Оригинал:</strong> Владимир Герасимович Мишин, 1976, Челябинск
+            <strong className="text-foreground">Мозаика «Завоевание космоса»</strong>
           </p>
-          <p>
-            <strong>Реинтерпретация:</strong> Пространство «Плавильня», 2024, Москва
-          </p>
-          <p className="mt-4 text-sm">Объект культурного наследия регионального значения</p>
+          <p className="mb-1">Художник: Инга Савина • 2024 • Москва, пространство «Плавильня»</p>
+          <p className="text-sm mt-4">Вдохновлено панно Владимира Мишина (Челябинск, 1976)</p>
         </div>
       </footer>
     </div>
