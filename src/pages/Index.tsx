@@ -4,9 +4,26 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageAlt, setSelectedImageAlt] = useState<string>('');
+
+  const openImageModal = (src: string, alt: string) => {
+    setSelectedImage(src);
+    setSelectedImageAlt(alt);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+    setSelectedImageAlt('');
+  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -88,12 +105,13 @@ const Index = () => {
                 </p>
               </div>
             </div>
-            <div className="hover-scale">
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101574.jpg', 'Мозаика Завоевание космоса в Плавильне')}>
               <img
                 src="https://cdn.poehali.dev/files/5359411705970101574.jpg"
                 alt="Мозаика Завоевание космоса в Плавильне"
                 className="rounded-lg shadow-2xl w-full"
               />
+              <p className="text-center mt-4 text-sm text-muted-foreground">Нажмите для увеличения</p>
             </div>
           </div>
         </div>
@@ -145,20 +163,28 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12 grid md:grid-cols-2 gap-8">
-            <div className="hover-scale">
+          <div className="mt-12 grid md:grid-cols-3 gap-8">
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101580.jpg', 'Монтаж мозаики')}>
+              <img
+                src="https://cdn.poehali.dev/files/5359411705970101580.jpg"
+                alt="Монтаж мозаики"
+                className="rounded-lg shadow-2xl w-full h-64 object-cover"
+              />
+              <p className="text-center mt-4 text-sm text-muted-foreground">Процесс монтажа мозаики</p>
+            </div>
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101581.jpg', 'Процесс создания мозаики')}>
               <img
                 src="https://cdn.poehali.dev/files/5359411705970101581.jpg"
                 alt="Процесс создания мозаики"
-                className="rounded-lg shadow-2xl w-full h-auto"
+                className="rounded-lg shadow-2xl w-full h-64 object-cover"
               />
               <p className="text-center mt-4 text-sm text-muted-foreground">Фрагменты мозаики в процессе работы</p>
             </div>
-            <div className="hover-scale">
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101582.jpg', 'Детали мозаики')}>
               <img
                 src="https://cdn.poehali.dev/files/5359411705970101582.jpg"
                 alt="Детали мозаики"
-                className="rounded-lg shadow-2xl w-full h-auto"
+                className="rounded-lg shadow-2xl w-full h-64 object-cover"
               />
               <p className="text-center mt-4 text-sm text-muted-foreground">Работа над деталями композиции</p>
             </div>
@@ -332,6 +358,27 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <Dialog open={!!selectedImage} onOpenChange={closeImageModal}>
+        <DialogContent className="max-w-5xl w-full p-0">
+          <DialogTitle className="sr-only">{selectedImageAlt}</DialogTitle>
+          {selectedImage && (
+            <div className="relative">
+              <img
+                src={selectedImage}
+                alt={selectedImageAlt}
+                className="w-full h-auto max-h-[90vh] object-contain"
+              />
+              <button
+                onClick={closeImageModal}
+                className="absolute top-4 right-4 bg-background/80 hover:bg-background text-foreground rounded-full p-2 transition-colors"
+              >
+                <Icon name="X" size={24} />
+              </button>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <footer className="py-8 border-t border-border bg-card">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
