@@ -257,19 +257,9 @@ const Index = () => {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h4 className="text-3xl font-bold mb-3 text-foreground">Инга Савина</h4>
-                  <p className="text-lg text-muted-foreground mb-6">
-                    Художник-мозаичист, специализируется на монументальном искусстве и реинтерпретации советского культурного наследия
+                  <p className="text-lg text-muted-foreground">
+                    Художник
                   </p>
-                  <div className="space-y-2 text-sm">
-                    <p className="flex items-center gap-2 justify-center md:justify-start">
-                      <Icon name="Briefcase" size={16} className="text-primary" />
-                      <span>Работы в пространствах Москвы и регионов</span>
-                    </p>
-                    <p className="flex items-center gap-2 justify-center md:justify-start">
-                      <Icon name="Award" size={16} className="text-primary" />
-                      <span>Авторские проекты по реставрации и созданию мозаик</span>
-                    </p>
-                  </div>
                 </div>
               </div>
             </CardContent>
