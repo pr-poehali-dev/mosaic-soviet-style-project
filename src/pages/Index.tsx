@@ -18,12 +18,12 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-primary">Завоеватели космоса</h1>
+          <h1 className="text-2xl font-bold text-primary">Космос • Челябинск</h1>
           <div className="hidden md:flex gap-6">
-            {['История', 'Герои', 'Процесс', 'Контакты'].map((item, idx) => (
+            {['История', 'Герои', 'Процесс', 'Галерея', 'Контакты'].map((item, idx) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(['history', 'heroes', 'process', 'contact'][idx])}
+                onClick={() => scrollToSection(['history', 'heroes', 'process', 'gallery', 'contact'][idx])}
                 className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
               >
                 {item}
@@ -43,10 +43,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20" />
         <div className="container mx-auto px-4 z-10 text-center fade-in">
           <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Завоеватели космоса<br />в пространстве «Плавильня»
+            Завоевание космоса<br />Челябинск, 1976
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Авторская реинтерпретация легендарного панно из Прилук. Суперметалл, Москва
+            Монументальное панно площадью 252 м² на стене Политехнического колледжа. Объект культурного наследия
           </p>
           <Button
             size="lg"
@@ -66,28 +66,29 @@ const Index = () => {
               <h3 className="text-4xl font-bold mb-6 text-primary">История создания</h3>
               <div className="space-y-4 text-lg">
                 <p>
-                  Оригинальное монументальное панно «Завоеватели космоса» создано Валентиной и Анатолием Зубченко для фасада Дома связи в городе Прилуки.
-                  Работы этих художников отличались технической стилистикой, динамичными абстрактными элементами и сложной композицией.
+                  Панно «Завоевание космоса» открыто 17 апреля 1976 года к 15-летию полёта Гагарина на стене Политехнического колледжа на ул. Гагарина, 17 в Челябинске.
                 </p>
                 <p>
-                  С заказчиками мы выбрали фрагмент из масштабного панно для создания новой мозаики размером 2,85 × 1,80 м в пространстве «Плавильня» (Суперметалл).
+                  Автор — художник Владимир Герасимович Мишин. Эскиз панно был его дипломной работой. Масштабное произведение площадью 252 м² занимает торец трёхэтажного корпуса.
                 </p>
                 <p>
-                  Задача стояла стилизовать панно, сохранив дух и вид оригинальной мозаики. Должно было создаваться впечатление, что она находилась здесь давно и была найдена при ремонте старых цехов.
-                  Работа заняла 2 месяца.
+                  Мишин разделил картину на 396 квадратных блоков (12 в высоту, 33 в ширину), каждый фрагмент перерисовал на отдельный лист картона в натуральную величину. Работа заняла ровно год, а подготовка — ещё 4 года.
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Решением Челябинского облисполкома №396 от 16.09.1985 панно внесено в реестр объектов культурного наследия регионального значения.
                 </p>
               </div>
               <div className="mt-8 p-6 bg-primary/10 border-l-4 border-primary rounded-r">
-                <p className="text-sm font-semibold text-primary mb-2">ОРИГИНАЛЬНЫЕ АВТОРЫ</p>
+                <p className="text-sm font-semibold text-primary mb-2">ЗАМЫСЕЛ АВТОРА</p>
                 <p className="italic">
-                  Валентина и Анатолий Зубченко — мастера монументального искусства СССР
+                  «Завоевание космоса — это не только полёт к звёздам, но и огромная подготовительная работа учёных, инженеров, конструкторов»
                 </p>
               </div>
             </div>
             <div className="hover-scale">
               <img
-                src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/files/74d601e0-cf63-4c91-85c6-bf042b91b1c4.jpg"
-                alt="Мозаика в пространстве Плавильня"
+                src="https://cdn.poehali.dev/files/панно оригинал.jpg"
+                alt="Панно Завоевание космоса в Челябинске"
                 className="rounded-lg shadow-2xl w-full"
               />
             </div>
@@ -97,25 +98,25 @@ const Index = () => {
 
       <section id="heroes" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Герои мозаики — пионеры космоса</h3>
+          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Герои панно</h3>
           <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-            В центре композиции 6 фигур — люди, без которых не случился бы первый полет человека в космос
+            Прототипы героев панно — великие люди, открывшие человечеству дорогу в космос. Художник внимательно изучал фотографии, добиваясь портретного сходства
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: 'Юрий Гагарин',
-                desc: 'Первый человек в космосе. Изображён в скафандре — центральная фигура композиции.',
+                desc: 'Первый человек в космосе. 12 апреля 1961 года совершил орбитальный полёт на корабле «Восток-1». Центральная фигура композиции.',
                 icon: 'Rocket',
               },
               {
                 title: 'Константин Циолковский',
-                desc: 'Отец теоретической космонавтики. Его научные труды заложили основу космических полётов.',
+                desc: 'Отец теоретической космонавтики. Обосновал возможность космических полётов, вывел формулу ракеты.',
                 icon: 'BookOpen',
               },
               {
                 title: 'Сергей Королёв',
-                desc: 'Главный конструктор. Слева от Гагарина — создатель первых космических кораблей.',
+                desc: 'Главный конструктор космических кораблей. Под его руководством создан «Восток-1» и первые спутники.',
                 icon: 'Cog',
               },
             ].map((hero, idx) => (
@@ -130,57 +131,21 @@ const Index = () => {
               </Card>
             ))}
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mt-8">
-            {[
-              {
-                title: 'Валентин Глушко',
-                desc: 'Конструктор ракетных двигателей. Изображён над центральными фигурами.',
-                icon: 'Zap',
-              },
-              {
-                title: 'Николай Каманин',
-                desc: 'Руководитель подготовки космонавтов. Справа от центральной группы.',
-                icon: 'Award',
-              },
-              {
-                title: 'Герман Титов',
-                desc: 'Второй космонавт СССР, дублёр Гагарина. Продолжил освоение космоса.',
-                icon: 'Star',
-              },
-            ].map((hero, idx) => (
-              <Card key={idx} className="hover-scale bg-card border-border">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
-                    <Icon name={hero.icon} size={32} className="text-secondary" />
-                  </div>
-                  <h4 className="text-2xl font-bold mb-3 text-foreground">{hero.title}</h4>
-                  <p className="text-muted-foreground">{hero.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <img
-              src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/files/0209f95c-f286-44f4-85c3-2d0351228e1c.jpg"
-              alt="Фрагмент мозаики с персонажами"
-              className="rounded-lg shadow-2xl w-full max-w-4xl mx-auto hover-scale"
-            />
-          </div>
         </div>
       </section>
 
       <section id="process" className="py-20 bg-card">
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-12 text-center text-primary">Процесс создания</h3>
+          <h3 className="text-4xl font-bold mb-12 text-center text-primary">Техника и материалы</h3>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h4 className="text-2xl font-semibold mb-6 text-secondary">Материалы</h4>
+              <h4 className="text-2xl font-semibold mb-6 text-secondary">Византийская мозаика</h4>
               <ul className="space-y-4">
                 {[
-                  { name: 'Смальта', desc: 'Для фигур космических первопроходцев. Цветное стекло передаёт глубину и объём.' },
-                  { name: 'Керамическая мозаика', desc: 'Для динамичного абстрактного фона, характерного для стиля Зубченко.' },
-                  { name: 'Размер работы', desc: '2,85 × 1,80 м — фрагмент оригинального масштабного панно' },
-                  { name: 'Стилизация', desc: 'Эффект «археологической находки» для органичного вписывания в старые цеха' },
+                  { name: 'Техника', desc: 'Прямой набор на блоки — византийская мозаика, один из древнейших методов' },
+                  { name: 'Смальта', desc: 'Многоцветное стекло десятков оттенков, заказанное на заводе по эскизам художника' },
+                  { name: 'Гранит', desc: 'Охристый, розовый, светло- и тёмно-серый — природный камень для фона и деталей' },
+                  { name: 'Площадь', desc: '252 квадратных метра — размер всей композиции на торце здания' },
                 ].map((material, idx) => (
                   <li key={idx} className="flex gap-4 items-start">
                     <div className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
@@ -196,11 +161,11 @@ const Index = () => {
               <h4 className="text-2xl font-semibold mb-6 text-secondary">Этапы работы</h4>
               <div className="space-y-6">
                 {[
-                  { step: '1', title: 'Выбор фрагмента', desc: 'Из масштабного панно выбран центральный фрагмент с 6 фигурами' },
-                  { step: '2', title: 'Стилизация композиции', desc: 'Адаптация под пространство с сохранением духа оригинала' },
-                  { step: '3', title: 'Работа со смальтой', desc: 'Детальная проработка фигур космических пионеров' },
-                  { step: '4', title: 'Создание фона', desc: 'Керамическая мозаика с динамичными абстрактными элементами' },
-                  { step: '5', title: 'Финальная интеграция', desc: 'Эффект «давней находки» в интерьере старых цехов' },
+                  { step: '1', title: 'Эскиз и разметка', desc: 'Картина разделена на 396 блоков: 12 в высоту, 33 в ширину' },
+                  { step: '2', title: 'Подготовка картонов', desc: 'Каждый фрагмент перерисован на картон в натуральную величину' },
+                  { step: '3', title: 'Подбор материалов', desc: 'По эскизам подобран гранит и заказана смальта нужных оттенков' },
+                  { step: '4', title: 'Набор мозаики', desc: 'Прямой набор на блоки — каждый элемент установлен вручную' },
+                  { step: '5', title: 'Монтаж', desc: 'Блоки смонтированы на гладкой поверхности торца трёхэтажного здания' },
                 ].map((stage, idx) => (
                   <div key={idx} className="flex gap-4">
                     <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold flex-shrink-0">
@@ -215,27 +180,74 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12">
-            <img
-              src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/files/f4ab0279-863d-478e-8210-c2391c116f28.jpg"
-              alt="Процесс создания мозаики"
-              className="rounded-lg shadow-2xl w-full hover-scale"
-            />
+          <div className="mt-12 p-6 bg-primary/5 rounded-lg border border-primary/20">
+            <p className="text-center text-muted-foreground">
+              <strong className="text-primary">Сроки:</strong> Подготовка — 4 года, реализация — 1 год. 
+              <strong className="text-primary ml-4">Открытие:</strong> 17 апреля 1976 года
+            </p>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-background">
+      <section id="gallery" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Галерея</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="hover-scale">
+              <img
+                src="https://cdn.poehali.dev/files/панно оригинал1.jpg"
+                alt="Общий вид панно"
+                className="rounded-lg shadow-2xl w-full h-auto"
+              />
+              <p className="text-center mt-4 text-sm text-muted-foreground">Общий вид панно на стене колледжа</p>
+            </div>
+            <div className="hover-scale">
+              <img
+                src="https://cdn.poehali.dev/files/ноги панно.jpg"
+                alt="Фрагмент мозаики — деталь"
+                className="rounded-lg shadow-2xl w-full h-auto"
+              />
+              <p className="text-center mt-4 text-sm text-muted-foreground">Детали византийской мозаики</p>
+            </div>
+          </div>
+          <div className="mt-12 text-center">
+            <h4 className="text-2xl font-bold mb-6 text-foreground">Реинтерпретация в пространстве «Плавильня»</h4>
+            <p className="text-muted-foreground mb-8 max-w-3xl mx-auto">
+              На основе челябинского панно создана авторская мозаика размером 2,85 × 1,80 м для пространства «Плавильня» в Москве. Работа сохраняет дух оригинала
+            </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="hover-scale">
+                <img
+                  src="https://cdn.poehali.dev/files/5359411705970101581.jpg"
+                  alt="Процесс создания новой мозаики"
+                  className="rounded-lg shadow-2xl w-full h-auto"
+                />
+                <p className="text-center mt-4 text-sm text-muted-foreground">Создание новой мозаики — фрагменты на полу</p>
+              </div>
+              <div className="hover-scale">
+                <img
+                  src="https://cdn.poehali.dev/files/5359411705970101582.jpg"
+                  alt="Детали новой мозаики"
+                  className="rounded-lg shadow-2xl w-full h-auto"
+                />
+                <p className="text-center mt-4 text-sm text-muted-foreground">Работа над деталями — смальта и гранит</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 bg-card">
         <div className="container mx-auto px-4 max-w-4xl">
           <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Свяжитесь с нами</h3>
-          <Card className="bg-card border-border">
+          <Card className="bg-background border-border">
             <CardContent className="p-8">
               <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
                     Ваше имя
                   </label>
-                  <Input id="name" placeholder="Иван Иванов" className="bg-background border-border" />
+                  <Input id="name" placeholder="Иван Иванов" className="bg-card border-border" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
@@ -245,7 +257,7 @@ const Index = () => {
                     id="email"
                     type="email"
                     placeholder="ivan@example.com"
-                    className="bg-background border-border"
+                    className="bg-card border-border"
                   />
                 </div>
                 <div>
@@ -255,8 +267,8 @@ const Index = () => {
                   <Textarea
                     id="message"
                     rows={5}
-                    placeholder="Расскажите о вашем интересе к мозаике..."
-                    className="bg-background border-border"
+                    placeholder="Расскажите о вашем интересе к проекту..."
+                    className="bg-card border-border"
                   />
                 </div>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6">
@@ -268,8 +280,8 @@ const Index = () => {
           </Card>
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
             {[
-              { icon: 'MapPin', label: 'Адрес', value: 'Суперметалл, Москва' },
-              { icon: 'Phone', label: 'Телефон', value: '+7 (495) 123-45-67' },
+              { icon: 'MapPin', label: 'Оригинал', value: 'Челябинск, ул. Гагарина, 17' },
+              { icon: 'Building', label: 'Новая мозаика', value: 'Москва, Суперметалл' },
               { icon: 'Mail', label: 'Email', value: 'info@plavil.art' },
             ].map((contact, idx) => (
               <div key={idx} className="p-4">
@@ -282,9 +294,15 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-8 border-t border-border bg-card">
+      <footer className="py-8 border-t border-border bg-background">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>© 2024 Завоеватели космоса. Реинтерпретация панно В. и А. Зубченко в пространстве «Плавильня».</p>
+          <p className="mb-2">
+            <strong>Оригинал:</strong> Владимир Герасимович Мишин, 1976, Челябинск
+          </p>
+          <p>
+            <strong>Реинтерпретация:</strong> Пространство «Плавильня», 2024, Москва
+          </p>
+          <p className="mt-4 text-sm">Объект культурного наследия регионального значения</p>
         </div>
       </footer>
     </div>
