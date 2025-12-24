@@ -18,7 +18,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-primary">Мозаика Плавильни</h1>
+          <h1 className="text-2xl font-bold text-primary">Завоеватели космоса</h1>
           <div className="hidden md:flex gap-6">
             {['История', 'Герои', 'Процесс', 'Контакты'].map((item, idx) => (
               <button
@@ -43,10 +43,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20" />
         <div className="container mx-auto px-4 z-10 text-center fade-in">
           <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Советская мозаика<br />в современном пространстве
+            Завоеватели космоса<br />в пространстве «Плавильня»
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Культурное наследие СССР в пространстве «Плавильня», Суперметалл, Москва
+            Авторская реинтерпретация легендарного панно из Прилук. Суперметалл, Москва
           </p>
           <Button
             size="lg"
@@ -66,22 +66,21 @@ const Index = () => {
               <h3 className="text-4xl font-bold mb-6 text-primary">История создания</h3>
               <div className="space-y-4 text-lg">
                 <p>
-                  Мозаика была создана в середине 1970-х годов для промышленного предприятия «Суперметалл».
-                  Этот период характеризовался расцветом монументального искусства в СССР.
+                  Оригинальное монументальное панно «Завоеватели космоса» создано Валентиной и Анатолием Зубченко для фасада Дома связи в городе Прилуки.
+                  Работы этих художников отличались технической стилистикой, динамичными абстрактными элементами и сложной композицией.
                 </p>
                 <p>
-                  Художники стремились воплотить идеалы коллективного труда и индустриального прогресса через
-                  яркие образы и символику советской эпохи.
+                  С заказчиками мы выбрали фрагмент из масштабного панно для создания новой мозаики размером 2,85 × 1,80 м в пространстве «Плавильня» (Суперметалл).
                 </p>
                 <p>
-                  После реконструкции здания мозаика была сохранена как важный элемент архитектурного наследия,
-                  став символом диалога между прошлым и настоящим.
+                  Задача стояла стилизовать панно, сохранив дух и вид оригинальной мозаики. Должно было создаваться впечатление, что она находилась здесь давно и была найдена при ремонте старых цехов.
+                  Работа заняла 2 месяца.
                 </p>
               </div>
               <div className="mt-8 p-6 bg-primary/10 border-l-4 border-primary rounded-r">
-                <p className="text-sm font-semibold text-primary mb-2">ЗАМЫСЕЛ АВТОРА</p>
+                <p className="text-sm font-semibold text-primary mb-2">ОРИГИНАЛЬНЫЕ АВТОРЫ</p>
                 <p className="italic">
-                  «Единство человека и металла, творческого духа и индустриальной мощи»
+                  Валентина и Анатолий Зубченко — мастера монументального искусства СССР
                 </p>
               </div>
             </div>
@@ -98,29 +97,61 @@ const Index = () => {
 
       <section id="heroes" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Герои мозаики</h3>
+          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Герои мозаики — пионеры космоса</h3>
+          <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
+            В центре композиции 6 фигур — люди, без которых не случился бы первый полет человека в космос
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Металлург',
-                desc: 'Центральная фигура композиции. Символизирует силу промышленности и мастерство рабочего класса.',
-                icon: 'Flame',
+                title: 'Юрий Гагарин',
+                desc: 'Первый человек в космосе. Изображён в скафандре — центральная фигура композиции.',
+                icon: 'Rocket',
               },
               {
-                title: 'Инженер',
-                desc: 'Представляет научно-технический прогресс и интеллектуальный труд советской эпохи.',
-                icon: 'Lightbulb',
+                title: 'Константин Циолковский',
+                desc: 'Отец теоретической космонавтики. Его научные труды заложили основу космических полётов.',
+                icon: 'BookOpen',
               },
               {
-                title: 'Молодежь',
-                desc: 'Олицетворяет будущее страны, энергию новых поколений и преемственность традиций.',
-                icon: 'Users',
+                title: 'Сергей Королёв',
+                desc: 'Главный конструктор. Слева от Гагарина — создатель первых космических кораблей.',
+                icon: 'Cog',
               },
             ].map((hero, idx) => (
               <Card key={idx} className="hover-scale bg-card border-border">
                 <CardContent className="p-6">
                   <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4">
                     <Icon name={hero.icon} size={32} className="text-primary" />
+                  </div>
+                  <h4 className="text-2xl font-bold mb-3 text-foreground">{hero.title}</h4>
+                  <p className="text-muted-foreground">{hero.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 mt-8">
+            {[
+              {
+                title: 'Валентин Глушко',
+                desc: 'Конструктор ракетных двигателей. Изображён над центральными фигурами.',
+                icon: 'Zap',
+              },
+              {
+                title: 'Николай Каманин',
+                desc: 'Руководитель подготовки космонавтов. Справа от центральной группы.',
+                icon: 'Award',
+              },
+              {
+                title: 'Герман Титов',
+                desc: 'Второй космонавт СССР, дублёр Гагарина. Продолжил освоение космоса.',
+                icon: 'Star',
+              },
+            ].map((hero, idx) => (
+              <Card key={idx} className="hover-scale bg-card border-border">
+                <CardContent className="p-6">
+                  <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
+                    <Icon name={hero.icon} size={32} className="text-secondary" />
                   </div>
                   <h4 className="text-2xl font-bold mb-3 text-foreground">{hero.title}</h4>
                   <p className="text-muted-foreground">{hero.desc}</p>
@@ -146,10 +177,10 @@ const Index = () => {
               <h4 className="text-2xl font-semibold mb-6 text-secondary">Материалы</h4>
               <ul className="space-y-4">
                 {[
-                  { name: 'Смальта', desc: 'Цветное непрозрачное стекло, сваренное из кремнезёма и оксидов металлов' },
-                  { name: 'Керамическая плитка', desc: 'Обожжённая глина с глазурованным покрытием для фоновых участков' },
-                  { name: 'Натуральный камень', desc: 'Мрамор и гранит для создания текстурных элементов' },
-                  { name: 'Цементный раствор', desc: 'Специальный состав для долговечного крепления элементов' },
+                  { name: 'Смальта', desc: 'Для фигур космических первопроходцев. Цветное стекло передаёт глубину и объём.' },
+                  { name: 'Керамическая мозаика', desc: 'Для динамичного абстрактного фона, характерного для стиля Зубченко.' },
+                  { name: 'Размер работы', desc: '2,85 × 1,80 м — фрагмент оригинального масштабного панно' },
+                  { name: 'Стилизация', desc: 'Эффект «археологической находки» для органичного вписывания в старые цеха' },
                 ].map((material, idx) => (
                   <li key={idx} className="flex gap-4 items-start">
                     <div className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
@@ -162,14 +193,14 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-2xl font-semibold mb-6 text-secondary">Техника монтажа</h4>
+              <h4 className="text-2xl font-semibold mb-6 text-secondary">Этапы работы</h4>
               <div className="space-y-6">
                 {[
-                  { step: '1', title: 'Подготовка основания', desc: 'Выравнивание стены и нанесение грунтовки' },
-                  { step: '2', title: 'Перенос эскиза', desc: 'Разметка композиции на поверхности стены' },
-                  { step: '3', title: 'Укладка элементов', desc: 'Последовательная установка смальты и плитки' },
-                  { step: '4', title: 'Затирка швов', desc: 'Заполнение промежутков цветным раствором' },
-                  { step: '5', title: 'Финишная обработка', desc: 'Полировка и защита поверхности' },
+                  { step: '1', title: 'Выбор фрагмента', desc: 'Из масштабного панно выбран центральный фрагмент с 6 фигурами' },
+                  { step: '2', title: 'Стилизация композиции', desc: 'Адаптация под пространство с сохранением духа оригинала' },
+                  { step: '3', title: 'Работа со смальтой', desc: 'Детальная проработка фигур космических пионеров' },
+                  { step: '4', title: 'Создание фона', desc: 'Керамическая мозаика с динамичными абстрактными элементами' },
+                  { step: '5', title: 'Финальная интеграция', desc: 'Эффект «давней находки» в интерьере старых цехов' },
                 ].map((stage, idx) => (
                   <div key={idx} className="flex gap-4">
                     <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold flex-shrink-0">
@@ -196,7 +227,7 @@ const Index = () => {
 
       <section id="contact" className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Свяжитесь с художником</h3>
+          <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Свяжитесь с нами</h3>
           <Card className="bg-card border-border">
             <CardContent className="p-8">
               <form className="space-y-6">
@@ -224,7 +255,7 @@ const Index = () => {
                   <Textarea
                     id="message"
                     rows={5}
-                    placeholder="Расскажите о вашем интересе к проекту..."
+                    placeholder="Расскажите о вашем интересе к мозаике..."
                     className="bg-background border-border"
                   />
                 </div>
@@ -253,7 +284,7 @@ const Index = () => {
 
       <footer className="py-8 border-t border-border bg-card">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>© 2024 Мозаика Плавильни. Сохраняя культурное наследие.</p>
+          <p>© 2024 Завоеватели космоса. Реинтерпретация панно В. и А. Зубченко в пространстве «Плавильня».</p>
         </div>
       </footer>
     </div>
