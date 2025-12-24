@@ -37,10 +37,10 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-2xl font-bold text-primary">Завоевание космоса</h1>
           <div className="hidden md:flex gap-6">
-            {['О панно', 'Процесс', 'Вдохновение', 'Художник'].map((item, idx) => (
+            {['О панно', 'Герои', 'Процесс', 'Вдохновение', 'Художник'].map((item, idx) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(['about', 'process', 'inspiration', 'contact'][idx])}
+                onClick={() => scrollToSection(['about', 'heroes', 'process', 'inspiration', 'contact'][idx])}
                 className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
               >
                 {item}
@@ -117,7 +117,138 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="process" className="py-20 bg-background">
+      <section id="heroes" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold mb-8 text-center text-primary">Герои космоса</h3>
+          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-lg">
+            На мозаике изображены шесть ключевых фигур советской космической программы — от мечтателя до первого космонавта
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                name: 'Константин Циолковский',
+                role: 'Теоретик космонавтики',
+                years: '1857-1935',
+                desc: 'Основоположник теоретической космонавтики. Обосновал использование ракет для космических полётов и вывел формулу ракетного движения.',
+                legacy: 'Его идеи заложили научный фундамент для всей космической эры',
+                icon: 'BookOpen'
+              },
+              {
+                name: 'Сергей Королёв',
+                role: 'Главный конструктор',
+                years: '1907-1966',
+                desc: 'Создатель советской ракетно-космической техники. Под его руководством запущен первый спутник и первый человек в космос.',
+                legacy: 'Превратил теорию в реальность, создав космическую отрасль',
+                icon: 'Rocket'
+              },
+              {
+                name: 'Юрий Гагарин',
+                role: 'Первый космонавт',
+                years: '1934-1968',
+                desc: '12 апреля 1961 года совершил первый в истории человечества полёт в космос на корабле «Восток-1».',
+                legacy: 'Символ космической эры и триумфа человеческого духа',
+                icon: 'Star'
+              },
+              {
+                name: 'Валентин Глушко',
+                role: 'Конструктор двигателей',
+                years: '1908-1989',
+                desc: 'Создатель ракетных двигателей, которые вывели человека в космос. Разработал двигатели для программ «Восток» и «Союз».',
+                legacy: 'Его двигатели до сих пор используются в космонавтике',
+                icon: 'Fuel'
+              },
+              {
+                name: 'Николай Каманин',
+                role: 'Генерал авиации',
+                years: '1908-1982',
+                desc: 'Руководитель подготовки космонавтов. Отвечал за отбор и обучение первого отряда космонавтов СССР.',
+                legacy: 'Создал систему подготовки космонавтов, действующую по сей день',
+                icon: 'Users'
+              },
+              {
+                name: 'Герман Титов',
+                role: 'Второй космонавт',
+                years: '1935-2000',
+                desc: 'Второй человек в космосе и первый, кто провёл там более суток (25 часов). Самый молодой космонавт в истории — 25 лет.',
+                legacy: 'Доказал возможность длительных космических полётов',
+                icon: 'Clock'
+              },
+            ].map((hero, idx) => (
+              <Card key={idx} className="bg-card border-border hover:border-primary/50 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Icon name={hero.icon} size={24} className="text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-foreground">{hero.name}</h4>
+                      <p className="text-sm text-primary font-semibold">{hero.role}</p>
+                      <p className="text-xs text-muted-foreground">{hero.years}</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">{hero.desc}</p>
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-xs font-semibold text-secondary mb-1">НАСЛЕДИЕ</p>
+                    <p className="text-sm italic text-foreground">{hero.legacy}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 p-8 rounded-lg border border-primary/20 mb-16">
+            <h4 className="text-2xl font-bold mb-6 text-center text-foreground">Связь с современностью</h4>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <div className="flex gap-3 mb-4">
+                  <Icon name="TrendingUp" className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <div>
+                    <p className="font-semibold text-foreground mb-2">Продолжение традиций</p>
+                    <p className="text-sm text-muted-foreground">
+                      Современная российская космонавтика строится на фундаменте, заложенном этими людьми. 
+                      «Союз» остаётся единственным средством доставки экипажей на МКС с 2011 по 2020 год.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3 mb-4">
+                  <Icon name="Globe" className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <div>
+                    <p className="font-semibold text-foreground mb-2">Вдохновение для нового поколения</p>
+                    <p className="text-sm text-muted-foreground">
+                      История первопроходцев космоса вдохновляет современные частные космические компании и новые проекты освоения космоса.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex gap-3 mb-4">
+                  <Icon name="Sparkles" className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <div>
+                    <p className="font-semibold text-foreground mb-2">Актуальность мечты</p>
+                    <p className="text-sm text-muted-foreground">
+                      Мечта о космосе, которую воплотили эти люди, сегодня стала реальностью для тысяч: 
+                      от учёных на МКС до туристов на коммерческих рейсах.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Icon name="Lightbulb" className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <div>
+                    <p className="font-semibold text-foreground mb-2">Технологии в жизни</p>
+                    <p className="text-sm text-muted-foreground">
+                      GPS-навигация, спутниковое ТВ, прогнозы погоды, материалы и технологии — всё это результат 
+                      космических исследований, начатых этими пионерами.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" className="py-20 bg-card">
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold mb-12 text-center text-secondary">Процесс создания</h3>
           <div className="grid md:grid-cols-2 gap-12">
