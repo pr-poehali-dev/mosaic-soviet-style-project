@@ -419,7 +419,7 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               <img
-                src="https://cdn.poehali.dev/files/5361663505783787402.jpg"
+                src="https://cdn.poehali.dev/files/5362006927073808240.jpg"
                 alt="Панно Завоевание космоса"
                 className="w-full rounded-lg shadow-2xl"
               />
