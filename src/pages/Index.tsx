@@ -214,9 +214,9 @@ const Index = () => {
                 </p>
               </div>
             </div>
-            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101574.jpg', 'Мозаика Завоевание космоса в Плавильне')}>
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5361663505783787581.jpg', 'Мозаика Завоевание космоса в Плавильне')}>
               <img
-                src="https://cdn.poehali.dev/files/5359411705970101574.jpg"
+                src="https://cdn.poehali.dev/files/5361663505783787581.jpg"
                 alt="Мозаика Завоевание космоса в Плавильне"
                 className="rounded-lg shadow-2xl w-full"
               />
