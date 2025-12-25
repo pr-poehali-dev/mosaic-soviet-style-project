@@ -272,7 +272,7 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
+          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5361663505783787394.jpg', 'Панно на этапе создания')}>
               <img
                 src="https://cdn.poehali.dev/files/5361663505783787394.jpg"
@@ -296,6 +296,14 @@ const Index = () => {
                 className="rounded-lg shadow-2xl w-full h-64 object-cover"
               />
               <p className="text-center mt-4 text-sm text-muted-foreground">Детальная проработка фигур и символов</p>
+            </div>
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101574.jpg', 'Панно в мастерской')}>
+              <img
+                src="https://cdn.poehali.dev/files/5359411705970101574.jpg"
+                alt="Панно в мастерской"
+                className="rounded-lg shadow-2xl w-full h-64 object-cover"
+              />
+              <p className="text-center mt-4 text-sm text-muted-foreground">Панно перед установкой в Плавильне</p>
             </div>
           </div>
         </div>
