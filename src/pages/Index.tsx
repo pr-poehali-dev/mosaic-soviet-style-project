@@ -297,13 +297,13 @@ const Index = () => {
               />
               <p className="text-center mt-4 text-sm text-muted-foreground">Детальная проработка фигур и символов</p>
             </div>
-            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101574.jpg', 'Панно в мастерской')}>
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101574.jpg', 'Панно после монтажа')}>
               <img
                 src="https://cdn.poehali.dev/files/5359411705970101574.jpg"
-                alt="Панно в мастерской"
+                alt="Панно после монтажа"
                 className="rounded-lg shadow-2xl w-full h-64 object-cover"
               />
-              <p className="text-center mt-4 text-sm text-muted-foreground">Панно перед установкой в Плавильне</p>
+              <p className="text-center mt-4 text-sm text-muted-foreground">Панно сразу после монтажа</p>
             </div>
           </div>
         </div>
