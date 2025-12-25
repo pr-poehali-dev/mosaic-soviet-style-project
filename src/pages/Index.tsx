@@ -14,6 +14,90 @@ const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedImageAlt, setSelectedImageAlt] = useState<string>('');
+  const [selectedHero, setSelectedHero] = useState<number | null>(null);
+  const [quizStarted, setQuizStarted] = useState(false);
+  const [currentQuizQuestion, setCurrentQuizQuestion] = useState(0);
+  const [quizScore, setQuizScore] = useState(0);
+  const [quizFinished, setQuizFinished] = useState(false);
+
+  const heroes = [
+    {
+      name: 'Константин Циолковский',
+      role: 'Теоретик космонавтики',
+      years: '1857-1935',
+      desc: 'Основоположник теоретической космонавтики. Обосновал использование ракет для космических полётов и вывел формулу ракетного движения.',
+      icon: 'BookOpen',
+      position: { top: '15%', left: '15%' }
+    },
+    {
+      name: 'Сергей Королёв',
+      role: 'Главный конструктор',
+      years: '1907-1966',
+      desc: 'Создатель советской ракетно-космической техники. Под его руководством запущен первый спутник и первый человек в космос.',
+      icon: 'Rocket',
+      position: { top: '20%', left: '40%' }
+    },
+    {
+      name: 'Юрий Гагарин',
+      role: 'Первый космонавт',
+      years: '1934-1968',
+      desc: '12 апреля 1961 года совершил первый в истории человечества полёт в космос на корабле «Восток-1».',
+      icon: 'Star',
+      position: { top: '35%', left: '50%' }
+    },
+    {
+      name: 'Валентин Глушко',
+      role: 'Конструктор двигателей',
+      years: '1908-1989',
+      desc: 'Создатель ракетных двигателей, которые вывели человека в космос. Разработал двигатели для программ «Восток» и «Союз».',
+      icon: 'Fuel',
+      position: { top: '25%', left: '70%' }
+    },
+    {
+      name: 'Николай Каманин',
+      role: 'Генерал авиации',
+      years: '1908-1982',
+      desc: 'Руководитель подготовки космонавтов. Отвечал за отбор и обучение первого отряда космонавтов СССР.',
+      icon: 'Users',
+      position: { top: '60%', left: '30%' }
+    },
+    {
+      name: 'Герман Титов',
+      role: 'Второй космонавт',
+      years: '1935-2000',
+      desc: 'Второй человек в космосе и первый, кто провёл там более суток (25 часов). Самый молодой космонавт в истории — 25 лет.',
+      icon: 'Clock',
+      position: { top: '65%', left: '65%' }
+    },
+  ];
+
+  const quizQuestions = [
+    {
+      question: 'Кто вывел формулу ракетного движения?',
+      options: ['Циолковский', 'Королёв', 'Глушко'],
+      correct: 0
+    },
+    {
+      question: 'Кто был главным конструктором советской космической программы?',
+      options: ['Каманин', 'Королёв', 'Титов'],
+      correct: 1
+    },
+    {
+      question: 'Когда Гагарин совершил первый полёт в космос?',
+      options: ['1957', '1961', '1965'],
+      correct: 1
+    },
+    {
+      question: 'Кто создал двигатели для кораблей «Восток»?',
+      options: ['Глушко', 'Циолковский', 'Королёв'],
+      correct: 0
+    },
+    {
+      question: 'Кто был самым молодым космонавтом в истории?',
+      options: ['Гагарин', 'Титов', 'Леонов'],
+      correct: 1
+    },
+  ];
 
   const openImageModal = (src: string, alt: string) => {
     setSelectedImage(src);
@@ -31,16 +115,35 @@ const Index = () => {
     setActiveSection(id);
   };
 
+  const handleQuizAnswer = (selectedAnswer: number) => {
+    if (selectedAnswer === quizQuestions[currentQuizQuestion].correct) {
+      setQuizScore(quizScore + 1);
+    }
+    
+    if (currentQuizQuestion < quizQuestions.length - 1) {
+      setCurrentQuizQuestion(currentQuizQuestion + 1);
+    } else {
+      setQuizFinished(true);
+    }
+  };
+
+  const resetQuiz = () => {
+    setQuizStarted(false);
+    setCurrentQuizQuestion(0);
+    setQuizScore(0);
+    setQuizFinished(false);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-2xl font-bold text-primary">Завоевание космоса</h1>
           <div className="hidden md:flex gap-6">
-            {['О панно', 'Процесс', 'Вдохновение', 'Художник'].map((item, idx) => (
+            {['О панно', 'Процесс', 'Карта', 'Квиз', 'Как добраться', 'Художник'].map((item, idx) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(['about', 'process', 'inspiration', 'contact'][idx])}
+                onClick={() => scrollToSection(['about', 'process', 'interactive', 'quiz', 'location', 'contact'][idx])}
                 className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
               >
                 {item}
@@ -285,50 +388,7 @@ const Index = () => {
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Константин Циолковский',
-                role: 'Теоретик космонавтики',
-                years: '1857-1935',
-                desc: 'Основоположник теоретической космонавтики. Обосновал использование ракет для космических полётов.',
-                icon: 'BookOpen'
-              },
-              {
-                name: 'Сергей Королёв',
-                role: 'Главный конструктор',
-                years: '1907-1966',
-                desc: 'Создатель советской ракетно-космической техники. Под его руководством запущен первый спутник.',
-                icon: 'Rocket'
-              },
-              {
-                name: 'Юрий Гагарин',
-                role: 'Первый космонавт',
-                years: '1934-1968',
-                desc: '12 апреля 1961 года совершил первый в истории человечества полёт в космос на корабле «Восток-1».',
-                icon: 'Star'
-              },
-              {
-                name: 'Валентин Глушко',
-                role: 'Конструктор двигателей',
-                years: '1908-1989',
-                desc: 'Создатель ракетных двигателей, которые вывели человека в космос. Его двигатели используются до сих пор.',
-                icon: 'Fuel'
-              },
-              {
-                name: 'Николай Каманин',
-                role: 'Генерал авиации',
-                years: '1908-1982',
-                desc: 'Руководитель подготовки космонавтов. Отвечал за отбор и обучение первого отряда космонавтов СССР.',
-                icon: 'Users'
-              },
-              {
-                name: 'Герман Титов',
-                role: 'Второй космонавт',
-                years: '1935-2000',
-                desc: 'Второй человек в космосе и первый, кто провёл там более суток. Самый молодой космонавт в истории — 25 лет.',
-                icon: 'Clock'
-              },
-            ].map((hero, idx) => (
+            {heroes.map((hero, idx) => (
               <Card key={idx} className="bg-background border-border hover:border-primary/50 transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-3">
@@ -349,7 +409,255 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-background">
+      <section id="interactive" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold mb-8 text-center text-secondary">Интерактивная карта панно</h3>
+          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-lg">
+            Нажмите на фигуру героя, чтобы узнать о нём больше
+          </p>
+          
+          <div className="max-w-5xl mx-auto">
+            <div className="relative">
+              <img
+                src="https://cdn.poehali.dev/files/5361663505783787402.jpg"
+                alt="Панно Завоевание космоса"
+                className="w-full rounded-lg shadow-2xl"
+              />
+              {heroes.map((hero, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setSelectedHero(idx)}
+                  className="absolute w-12 h-12 bg-primary/80 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 border-white shadow-lg"
+                  style={{ top: hero.position.top, left: hero.position.left }}
+                  aria-label={`Узнать о ${hero.name}`}
+                >
+                  <Icon name={hero.icon} size={24} className="text-white" />
+                </button>
+              ))}
+            </div>
+
+            {selectedHero !== null && (
+              <Card className="mt-8 bg-card border-primary/50 border-2">
+                <CardContent className="p-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Icon name={heroes[selectedHero].icon} size={32} className="text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="text-2xl font-bold text-foreground">{heroes[selectedHero].name}</h4>
+                        <p className="text-primary font-semibold">{heroes[selectedHero].role}</p>
+                        <p className="text-sm text-muted-foreground">{heroes[selectedHero].years}</p>
+                      </div>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setSelectedHero(null)}
+                    >
+                      <Icon name="X" size={24} />
+                    </Button>
+                  </div>
+                  <p className="text-lg text-muted-foreground">{heroes[selectedHero].desc}</p>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz" className="py-20 bg-card">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h3 className="text-4xl font-bold mb-8 text-center text-primary">Квиз: Узнай героя космоса</h3>
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            Проверьте свои знания о покорителях космоса
+          </p>
+
+          {!quizStarted && !quizFinished && (
+            <Card className="bg-background border-border">
+              <CardContent className="p-12 text-center">
+                <Icon name="Sparkles" size={64} className="text-primary mx-auto mb-6" />
+                <h4 className="text-2xl font-bold mb-4 text-foreground">Готовы начать?</h4>
+                <p className="text-muted-foreground mb-8">
+                  Вас ждёт {quizQuestions.length} вопросов о героях космической эры
+                </p>
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  onClick={() => setQuizStarted(true)}
+                >
+                  Начать квиз <Icon name="ArrowRight" size={20} className="ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+          )}
+
+          {quizStarted && !quizFinished && (
+            <Card className="bg-background border-border">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <div className="flex justify-between text-sm text-muted-foreground mb-2">
+                    <span>Вопрос {currentQuizQuestion + 1} из {quizQuestions.length}</span>
+                    <span>Правильных ответов: {quizScore}</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div
+                      className="bg-primary h-2 rounded-full transition-all duration-300"
+                      style={{ width: `${((currentQuizQuestion + 1) / quizQuestions.length) * 100}%` }}
+                    />
+                  </div>
+                </div>
+
+                <h4 className="text-xl font-bold mb-6 text-foreground">
+                  {quizQuestions[currentQuizQuestion].question}
+                </h4>
+
+                <div className="space-y-3">
+                  {quizQuestions[currentQuizQuestion].options.map((option, idx) => (
+                    <Button
+                      key={idx}
+                      variant="outline"
+                      className="w-full justify-start text-left h-auto py-4 px-6 hover:bg-primary/10 hover:border-primary"
+                      onClick={() => handleQuizAnswer(idx)}
+                    >
+                      <span className="font-semibold text-lg">{option}</span>
+                    </Button>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {quizFinished && (
+            <Card className="bg-background border-border">
+              <CardContent className="p-12 text-center">
+                <Icon name="Trophy" size={64} className="text-secondary mx-auto mb-6" />
+                <h4 className="text-3xl font-bold mb-4 text-foreground">Квиз завершён!</h4>
+                <p className="text-2xl text-primary mb-8">
+                  Ваш результат: {quizScore} из {quizQuestions.length}
+                </p>
+                <p className="text-muted-foreground mb-8">
+                  {quizScore === quizQuestions.length && "Отлично! Вы знаток космической истории!"}
+                  {quizScore >= quizQuestions.length * 0.7 && quizScore < quizQuestions.length && "Хороший результат! Продолжайте изучать историю космоса."}
+                  {quizScore < quizQuestions.length * 0.7 && "Есть куда расти! Попробуйте ещё раз."}
+                </p>
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  onClick={resetQuiz}
+                >
+                  Пройти снова <Icon name="RotateCcw" size={20} className="ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+          )}
+        </div>
+      </section>
+
+      <section id="location" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold mb-8 text-center text-secondary">Как добраться</h3>
+          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-lg">
+            Посетите Плавильню в деловом квартале Суперметалл и увидите панно своими глазами
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div className="space-y-6">
+              <Card className="bg-card border-border">
+                <CardContent className="p-6">
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Icon name="MapPin" size={24} className="text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-2 text-foreground">Адрес</h4>
+                      <p className="text-muted-foreground">
+                        Деловой квартал «Суперметалл»<br />
+                        Корпус «Цех», первый этаж<br />
+                        Москва, ул. 2-я Бауманская
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border-border">
+                <CardContent className="p-6">
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                      <Icon name="Train" size={24} className="text-secondary" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-2 text-foreground">Метро</h4>
+                      <p className="text-muted-foreground mb-3">
+                        <strong>Бауманская</strong> — 7 минут пешком<br />
+                        <strong>Электрозаводская</strong> — 10 минут пешком
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        От метро «Бауманская» идите по ул. Бауманская в сторону центра, 
+                        поверните на 2-ю Бауманскую улицу.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border-border">
+                <CardContent className="p-6">
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Icon name="Car" size={24} className="text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-2 text-foreground">Парковка</h4>
+                      <p className="text-muted-foreground">
+                        На территории делового квартала есть гостевая парковка.<br />
+                        Въезд с 2-й Бауманской улицы.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border-border">
+                <CardContent className="p-6">
+                  <div className="flex gap-4 items-start">
+                    <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                      <Icon name="Landmark" size={24} className="text-secondary" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg mb-2 text-foreground">Ориентиры</h4>
+                      <p className="text-muted-foreground">
+                        Рядом с МГТУ имени Баумана<br />
+                        Неподалёку от Лефортовского дворца<br />
+                        Здание бывшего института ЦНИИЧермет
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="hover-scale">
+              <div className="rounded-lg overflow-hidden shadow-2xl h-full min-h-[600px]">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?ll=37.684444%2C55.771111&z=16&pt=37.684444,55.771111,pm2rdm"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  className="min-h-[600px]"
+                  title="Карта проезда к Плавильне"
+                ></iframe>
+              </div>
+              <p className="text-center mt-4 text-sm text-muted-foreground">
+                Интерактивная карта Яндекс.Карты
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 bg-card">
         <div className="container mx-auto px-4 max-w-4xl">
           <h3 className="text-4xl font-bold mb-8 text-center text-secondary">Художник</h3>
           
