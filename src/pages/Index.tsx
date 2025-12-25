@@ -273,29 +273,29 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-12 grid md:grid-cols-3 gap-8">
-            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101580.jpg', 'Монтаж мозаики')}>
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5361663505783787394.jpg', 'Панно на этапе создания')}>
               <img
-                src="https://cdn.poehali.dev/files/5359411705970101580.jpg"
-                alt="Монтаж мозаики"
+                src="https://cdn.poehali.dev/files/5361663505783787394.jpg"
+                alt="Панно на этапе создания"
                 className="rounded-lg shadow-2xl w-full h-64 object-cover"
               />
-              <p className="text-center mt-4 text-sm text-muted-foreground">Процесс монтажа мозаики</p>
+              <p className="text-center mt-4 text-sm text-muted-foreground">Панно в процессе работы</p>
             </div>
-            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101581.jpg', 'Процесс создания мозаики')}>
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101583 (1).jpg', 'Фрагмент мозаики крупным планом')}>
               <img
-                src="https://cdn.poehali.dev/files/5359411705970101581.jpg"
-                alt="Процесс создания мозаики"
+                src="https://cdn.poehali.dev/files/5359411705970101583 (1).jpg"
+                alt="Фрагмент мозаики крупным планом"
                 className="rounded-lg shadow-2xl w-full h-64 object-cover"
               />
-              <p className="text-center mt-4 text-sm text-muted-foreground">Фрагменты мозаики в процессе работы</p>
+              <p className="text-center mt-4 text-sm text-muted-foreground">Фрагменты мозаики — работа над деталями</p>
             </div>
-            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101582.jpg', 'Детали мозаики')}>
+            <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101578.jpg', 'Детали композиции')}>
               <img
-                src="https://cdn.poehali.dev/files/5359411705970101582.jpg"
-                alt="Детали мозаики"
+                src="https://cdn.poehali.dev/files/5359411705970101578.jpg"
+                alt="Детали композиции"
                 className="rounded-lg shadow-2xl w-full h-64 object-cover"
               />
-              <p className="text-center mt-4 text-sm text-muted-foreground">Работа над деталями композиции</p>
+              <p className="text-center mt-4 text-sm text-muted-foreground">Детальная проработка фигур и символов</p>
             </div>
           </div>
         </div>
