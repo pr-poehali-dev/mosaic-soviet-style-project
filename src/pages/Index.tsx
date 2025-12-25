@@ -295,7 +295,7 @@ const Index = () => {
                 alt="Детали композиции"
                 className="rounded-lg shadow-2xl w-full h-64 object-cover"
               />
-              <p className="text-center mt-4 text-sm text-muted-foreground">Детальная проработка фигур и символов</p>
+              <p className="text-center mt-4 text-sm text-muted-foreground">Работа над фоном</p>
             </div>
             <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/5359411705970101574.jpg', 'Панно после монтажа')}>
               <img
@@ -311,7 +311,7 @@ const Index = () => {
                 alt="Детали лица героя"
                 className="rounded-lg shadow-2xl w-full h-64 object-cover"
               />
-              <p className="text-center mt-4 text-sm text-muted-foreground">Детали смальты — работа над лицом</p>
+              <p className="text-center mt-4 text-sm text-muted-foreground">Работа над лицом</p>
             </div>
             <div className="hover-scale cursor-pointer" onClick={() => openImageModal('https://cdn.poehali.dev/files/IMG_4556.JPG', 'Фрагмент с фигурами героев')}>
               <img
