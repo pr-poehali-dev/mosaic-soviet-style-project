@@ -271,6 +271,78 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold mb-8 text-center text-primary">Герои на панно</h3>
+          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-lg">
+            Шесть ключевых фигур советской космической программы — от мечтателя до первого космонавта
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Константин Циолковский',
+                role: 'Теоретик космонавтики',
+                years: '1857-1935',
+                desc: 'Основоположник теоретической космонавтики. Обосновал использование ракет для космических полётов.',
+                icon: 'BookOpen'
+              },
+              {
+                name: 'Сергей Королёв',
+                role: 'Главный конструктор',
+                years: '1907-1966',
+                desc: 'Создатель советской ракетно-космической техники. Под его руководством запущен первый спутник.',
+                icon: 'Rocket'
+              },
+              {
+                name: 'Юрий Гагарин',
+                role: 'Первый космонавт',
+                years: '1934-1968',
+                desc: '12 апреля 1961 года совершил первый в истории человечества полёт в космос на корабле «Восток-1».',
+                icon: 'Star'
+              },
+              {
+                name: 'Валентин Глушко',
+                role: 'Конструктор двигателей',
+                years: '1908-1989',
+                desc: 'Создатель ракетных двигателей, которые вывели человека в космос. Его двигатели используются до сих пор.',
+                icon: 'Fuel'
+              },
+              {
+                name: 'Николай Каманин',
+                role: 'Генерал авиации',
+                years: '1908-1982',
+                desc: 'Руководитель подготовки космонавтов. Отвечал за отбор и обучение первого отряда космонавтов СССР.',
+                icon: 'Users'
+              },
+              {
+                name: 'Герман Титов',
+                role: 'Второй космонавт',
+                years: '1935-2000',
+                desc: 'Второй человек в космосе и первый, кто провёл там более суток. Самый молодой космонавт в истории — 25 лет.',
+                icon: 'Clock'
+              },
+            ].map((hero, idx) => (
+              <Card key={idx} className="bg-background border-border hover:border-primary/50 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Icon name={hero.icon} size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-foreground">{hero.name}</h4>
+                      <p className="text-xs text-primary font-semibold">{hero.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-3">{hero.years}</p>
+                  <p className="text-sm text-muted-foreground">{hero.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <h3 className="text-4xl font-bold mb-8 text-center text-secondary">Художник</h3>
