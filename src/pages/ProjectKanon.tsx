@@ -38,12 +38,12 @@ const photos = [
   {
     src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/46ce0f12-74bf-4cd0-ad1c-c63ec2e5d780.jpg',
     alt: 'Авторы мозаики за монтажом — вид сзади',
-    caption: 'Команда в процессе монтажа — укладка фрагментов мозаики на стену',
+    caption: 'Работа в мастерской — укладка плитки на сетку перед монтажом',
   },
   {
     src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/1c7d577e-b748-4def-b4ba-715e125260d4.jpg',
     alt: 'Инга за столом в мастерской — сборка мозаики',
-    caption: 'Работа в мастерской — укладка плитки на сетку перед монтажом',
+    caption: 'Команда в процессе монтажа — укладка фрагментов мозаики на стену',
   },
   {
     src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/1db233fd-92e3-479f-be65-09052141c486.jpg',
