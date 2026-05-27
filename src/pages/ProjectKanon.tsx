@@ -16,14 +16,14 @@ const photos = [
     caption: 'Мерч для сотрудников ресторана — принт мозаики на корпоративных футболках',
   },
   {
-    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/d160a833-8784-44e7-8f6a-4b6140398b1b.jpg',
-    alt: 'Фрагмент мозаики — стеклянная плитка крупным планом',
-    caption: 'Фрагмент — стеклянная плитка и разноцветная затирка крупным планом',
+    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/ae6386d3-565d-4e0e-a46e-552fe9485800.jpg',
+    alt: 'Фрагмент мозаики «Канон» — синяя плитка крупным планом',
+    caption: 'Фрагмент — синяя и красная стеклянная плитка крупным планом',
   },
   {
-    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/45e74cc3-d42d-4735-895c-f5e8dca9d3c2.jpg',
-    alt: 'Фрагмент мозаики — детали труб и котла',
-    caption: 'Детали котла и труб — 30+ оттенков стеклянной плитки',
+    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/dcafbf37-4cb1-4b08-bfa1-9e1159ca6d32.jpg',
+    alt: 'Фрагмент мозаики — детали котла и арки',
+    caption: 'Детали котла и арки — яркие красные и синие оттенки',
   },
   {
     src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/3258ee83-398a-4ca2-b91b-6608cd2b9266.jpg',
