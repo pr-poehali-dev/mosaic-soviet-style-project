@@ -157,6 +157,11 @@ const ProjectKanon = () => {
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">
             Яркая палитра с доминирующими красными и синими тонами передаёт энергию пивоваренного процесса — жар котлов, клубы пара, движение воды.
           </p>
+          <div className="inline-flex items-center gap-3 bg-card border border-border rounded-lg px-6 py-4 mb-10">
+            <Icon name="MapPin" size={20} className="text-primary flex-shrink-0" />
+            <p className="text-foreground text-base">Тула, ул. Металлистов, 13 (Музейный квартал)</p>
+          </div>
+          <br />
           <Button onClick={() => navigate('/')} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
             <Icon name="ArrowLeft" size={18} className="mr-2" /> Вернуться к портфолио
           </Button>
