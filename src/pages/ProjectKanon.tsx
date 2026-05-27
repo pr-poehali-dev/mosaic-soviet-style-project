@@ -95,6 +95,25 @@ const ProjectKanon = () => {
         </div>
       </section>
 
+      {/* Цифры */}
+      <section className="py-16 bg-primary/5 border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
+            {[
+              { value: '8 000', label: 'элементов' },
+              { value: '30+', label: 'оттенков' },
+              { value: '300+', label: 'часов работы' },
+              { value: '2026', label: 'год создания' },
+            ].map((item) => (
+              <div key={item.label}>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{item.value}</div>
+                <div className="text-muted-foreground text-sm uppercase tracking-widest">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* О проекте */}
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 max-w-3xl text-center">
@@ -102,8 +121,11 @@ const ProjectKanon = () => {
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             Мозаика создана специально для ресторана-пивоварни «Канон» в Туле. Центральный образ — пивоваренный котёл, вписанный в динамичную композицию из труб, пара и воды.
           </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            Работа выполнена из стеклянной плитки: более 30 оттенков, 8 000 элементов и свыше 300 часов ручного труда. Каждый фрагмент уложен вручную — с разноцветной затиркой, которая подчёркивает живость и фактуру мозаичной поверхности.
+          </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-            Работа выполнена из смальты: яркая цветовая палитра с доминирующими красными и синими тонами создаёт ощущение энергии и тепла производственного процесса.
+            Яркая палитра с доминирующими красными и синими тонами передаёт энергию пивоваренного процесса — жар котлов, клубы пара, движение воды.
           </p>
           <Button onClick={() => navigate('/')} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
             <Icon name="ArrowLeft" size={18} className="mr-2" /> Вернуться к портфолио
