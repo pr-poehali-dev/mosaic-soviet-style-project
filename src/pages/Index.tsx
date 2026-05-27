@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -11,6 +12,7 @@ import {
 } from '@/components/ui/dialog';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('hero');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedImageAlt, setSelectedImageAlt] = useState<string>('');
@@ -234,7 +236,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card
               className="bg-card border-border overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-              onClick={() => scrollToSection('about')}
+              onClick={() => navigate('/project/kosmos')}
             >
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -258,7 +260,10 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-card border-border overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <Card
+              className="bg-card border-border overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+              onClick={() => navigate('/project/kanon')}
+            >
               <div className="relative h-64 overflow-hidden bg-muted flex items-center justify-center">
                 <div className="text-center text-muted-foreground">
                   <Icon name="Image" size={48} className="mx-auto mb-2 opacity-30" />
