@@ -49,7 +49,7 @@ const ArtistHero = ({ scrollToSection }: ArtistHeroProps) => {
                 Создаю монументальные мозаики в технике советского авангарда и византийской традиции. Мои работы — это диалог между историей и современностью, вписанный в архитектурное пространство.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
-                {['Монументальная мозаика', 'Смальта', 'Керамика', 'Арт-группа 6/57'].map((tag) => (
+                {['Монументальная мозаика', 'Смальта', 'Керамика', 'Арт-группа 6/57', 'Обучение мозаике'].map((tag) => (
                   <span key={tag} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
                     {tag}
                   </span>
@@ -89,6 +89,8 @@ const ArtistHero = ({ scrollToSection }: ArtistHeroProps) => {
               { year: '2022', text: 'Курс Radiopaint Татьяны Иванковой (БВШД, Москва)' },
               { year: '2024', text: '«Лаборатория современного искусства» Евгении Войнар — Резидент 7 сезона Открытых студий ЦСИ Винзавод' },
               { year: '2024', text: 'Сооснователь и руководитель арт-группы «6/57», г. Тула' },
+              { year: '2025', text: 'Член Товарищества Тульских художников' },
+              { year: '2025', text: 'Резидент ремесленного пространства «Точка» (Тула) — провожу обучение и интенсивы по мозаике' },
             ].map((item, idx) => (
               <div key={idx} className="flex gap-6 items-start">
                 <div className="flex-shrink-0 w-24 text-right">
@@ -145,16 +147,16 @@ const ArtistHero = ({ scrollToSection }: ArtistHeroProps) => {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-4 left-4">
-                  <span className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded font-medium uppercase tracking-wide">Тула • 2024</span>
+                  <span className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded font-medium uppercase tracking-wide">Тула • 2026</span>
                 </div>
               </div>
               <CardContent className="p-6">
                 <h4 className="text-2xl font-bold mb-3 text-foreground">Мозаика для «Канон»</h4>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Современная мозаика для ресторана-пивоварни «Канон» в Туле. Авторская работа, органично вписанная в концепцию заведения.
+                  Современная мозаика для ресторана-пивоварни «Канон» в Туле. Авторская работа, органично вписанная в концепцию заведения. Май 2026.
                 </p>
-                <div className="flex items-center text-muted-foreground font-medium text-sm">
-                  <Icon name="Clock" size={16} className="mr-1" /> В разработке
+                <div className="flex items-center text-primary font-medium text-sm">
+                  Подробнее <Icon name="ArrowRight" size={16} className="ml-1" />
                 </div>
               </CardContent>
             </Card>
