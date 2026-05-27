@@ -116,7 +116,7 @@ const ArtistHero = ({ scrollToSection }: ArtistHeroProps) => {
             >
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/2b27919c-cc6b-470b-8832-c8b379fff7c6.jpg"
+                  src="https://cdn.poehali.dev/files/5359411705970101574.jpg"
                   alt="Завоевание космоса"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
