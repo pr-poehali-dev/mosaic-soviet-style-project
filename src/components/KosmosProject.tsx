@@ -162,7 +162,7 @@ const KosmosProject = ({ heroes, selectedHero, setSelectedHero, openImageModal }
               <div className="mt-6 p-4 bg-secondary/10 border-l-4 border-secondary rounded-r">
                 <p className="text-sm italic">
                   Панно создано к 15-летию полёта Гагарина. Эскиз был дипломной работой художника. 
-                  Композиция разделена на 396 блоков и создавалась в течение года.
+                  Композиция разделена на 396 блоков — 4 года создавалась в мастерской и ещё год монтировалась на месте.
                 </p>
               </div>
             </div>
