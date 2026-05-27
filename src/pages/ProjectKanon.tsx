@@ -6,24 +6,29 @@ import Icon from '@/components/ui/icon';
 
 const photos = [
   {
-    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/9aa7d768-1225-4198-b8b6-f4b60d9aac6a.jpg',
-    alt: 'Мозаика для Канон — готовая работа в интерьере',
-    caption: 'Готовая мозаика в интерьере ресторана-пивоварни «Канон»',
+    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/4345624c-31cd-4c88-a9fd-33864d72cff0.jpg',
+    alt: 'Готовая мозаика «Канон» в интерьере — вид целиком',
+    caption: 'Готовая мозаика в интерьере ресторана-пивоварни «Канон», 2,10 × 1,82 м',
   },
   {
-    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/09d916c5-cc81-44ef-83c3-5763c954a6ac.JPG',
-    alt: 'Мозаика для Канон — фрагменты перед монтажом',
-    caption: 'Фрагменты мозаики перед монтажом',
+    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/212a3d20-4722-4e32-affb-7cce0c5953d5.jpg',
+    alt: 'Мозаика «Канон» — автор рядом с готовой работой',
+    caption: 'Автор рядом с готовой работой — масштаб 2,10 × 1,82 м',
   },
   {
-    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/cebc5f81-d71b-4ef2-a73a-6a7e45e37fda.jpg',
-    alt: 'Детали мозаики крупным планом',
-    caption: 'Детали — смальта крупным планом',
+    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/d160a833-8784-44e7-8f6a-4b6140398b1b.jpg',
+    alt: 'Фрагмент мозаики — стеклянная плитка крупным планом',
+    caption: 'Фрагмент — стеклянная плитка и разноцветная затирка крупным планом',
   },
   {
-    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/df2f57a6-4a52-4eb2-bc33-d12c93117e21.jpg',
-    alt: 'Инга Савина в процессе монтажа мозаики',
-    caption: 'Процесс монтажа — Инга Савина за работой',
+    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/45e74cc3-d42d-4735-895c-f5e8dca9d3c2.jpg',
+    alt: 'Фрагмент мозаики — детали труб и котла',
+    caption: 'Детали котла и труб — 30+ оттенков стеклянной плитки',
+  },
+  {
+    src: 'https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/3258ee83-398a-4ca2-b91b-6608cd2b9266.jpg',
+    alt: 'Процесс работы над мозаикой «Канон»',
+    caption: 'Процесс работы — более 300 часов ручного труда',
   },
 ];
 
@@ -52,7 +57,7 @@ const ProjectKanon = () => {
             Мозаика для «Канон»
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Авторская мозаика для ресторана-пивоварни «Канон», Тула. Пивоваренный котёл в технике смальты.
+            Авторская мозаика из стеклянной плитки для ресторана-пивоварни «Канон», Тула. 2,10 × 1,82 м. Пивоваренный котёл в окружении труб, пара и воды.
           </p>
         </div>
         <div className="relative h-[60vh] overflow-hidden">
