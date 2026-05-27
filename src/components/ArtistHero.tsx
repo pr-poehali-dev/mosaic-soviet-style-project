@@ -116,7 +116,7 @@ const ArtistHero = ({ scrollToSection }: ArtistHeroProps) => {
             >
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/IMG_4557.JPG"
+                  src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/2b27919c-cc6b-470b-8832-c8b379fff7c6.jpg"
                   alt="Завоевание космоса"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
@@ -140,11 +140,12 @@ const ArtistHero = ({ scrollToSection }: ArtistHeroProps) => {
               className="bg-card border-border overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               onClick={() => navigate('/project/kanon')}
             >
-              <div className="relative h-64 overflow-hidden bg-muted flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <Icon name="Image" size={48} className="mx-auto mb-2 opacity-30" />
-                  <p className="text-sm opacity-50">Фото скоро появится</p>
-                </div>
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/9aa7d768-1225-4198-b8b6-f4b60d9aac6a.jpg"
+                  alt="Мозаика для Канон"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <span className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded font-medium uppercase tracking-wide">Тула • 2026</span>
