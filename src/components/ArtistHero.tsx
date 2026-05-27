@@ -142,7 +142,7 @@ const ArtistHero = ({ scrollToSection }: ArtistHeroProps) => {
             >
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/9aa7d768-1225-4198-b8b6-f4b60d9aac6a.jpg"
+                  src="https://cdn.poehali.dev/projects/601949fe-ecc7-4bc0-87a0-c67acf8aa954/bucket/4345624c-31cd-4c88-a9fd-33864d72cff0.jpg"
                   alt="Мозаика для Канон"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
