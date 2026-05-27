@@ -33,9 +33,9 @@ const QuizAndLocation = ({
     <>
       <section id="quiz" className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h3 className="text-4xl font-bold mb-8 text-center text-primary">Квиз: Узнай героя космоса</h3>
+          <h3 className="text-4xl font-bold mb-8 text-center text-primary">Квиз: История мозаики</h3>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            Проверьте свои знания о покорителях космоса
+            От Византии до советского монументализма — проверьте свои знания
           </p>
 
           {!quizStarted && !quizFinished && (
@@ -44,7 +44,7 @@ const QuizAndLocation = ({
                 <Icon name="Sparkles" size={64} className="text-primary mx-auto mb-6" />
                 <h4 className="text-2xl font-bold mb-4 text-foreground">Готовы начать?</h4>
                 <p className="text-muted-foreground mb-8">
-                  Вас ждёт {quizQuestions.length} вопросов о героях космической эры
+                  {quizQuestions.length} вопросов о технике, истории и советской монументальной мозаике
                 </p>
                 <Button
                   size="lg"
@@ -102,9 +102,9 @@ const QuizAndLocation = ({
                   Ваш результат: {quizScore} из {quizQuestions.length}
                 </p>
                 <p className="text-muted-foreground mb-8">
-                  {quizScore === quizQuestions.length && "Отлично! Вы знаток космической истории!"}
-                  {quizScore >= quizQuestions.length * 0.7 && quizScore < quizQuestions.length && "Хороший результат! Продолжайте изучать историю космоса."}
-                  {quizScore < quizQuestions.length * 0.7 && "Есть куда расти! Попробуйте ещё раз."}
+                  {quizScore === quizQuestions.length && "Превосходно! Вы настоящий знаток мозаичного искусства!"}
+                  {quizScore >= quizQuestions.length * 0.7 && quizScore < quizQuestions.length && "Хороший результат! Вы хорошо знаете историю мозаики."}
+                  {quizScore < quizQuestions.length * 0.7 && "Есть что изучить — мозаика скрывает много тайн!"}
                 </p>
                 <Button
                   size="lg"
