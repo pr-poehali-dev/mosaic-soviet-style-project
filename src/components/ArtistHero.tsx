@@ -78,7 +78,7 @@ const ArtistHero = ({ scrollToSection }: ArtistHeroProps) => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Образование и биография */}
+      {/* Образование */}
       <section id="bio" className="py-20 bg-card">
         <div className="container mx-auto px-4 max-w-4xl">
           <h3 className="text-4xl font-bold mb-12 text-primary text-center">Образование</h3>
@@ -88,8 +88,28 @@ const ArtistHero = ({ scrollToSection }: ArtistHeroProps) => {
               { year: '2020–2023', text: 'Курсы по масляной и акриловой живописи Юлии Кошелевой (Нижний Новгород)' },
               { year: '2022', text: 'Курс Radiopaint Татьяны Иванковой (БВШД, Москва)' },
               { year: '2024', text: '«Лаборатория современного искусства» Евгении Войнар — Резидент 7 сезона Открытых студий ЦСИ Винзавод' },
+            ].map((item, idx) => (
+              <div key={idx} className="flex gap-6 items-start">
+                <div className="flex-shrink-0 w-24 text-right">
+                  <span className="text-primary font-bold text-sm">{item.year}</span>
+                </div>
+                <div className="flex-shrink-0 w-px bg-border self-stretch mt-1" />
+                <p className="text-foreground text-lg leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Членство и резидентство */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h3 className="text-4xl font-bold mb-12 text-primary text-center">Членство и резидентство</h3>
+          <div className="space-y-6">
+            {[
               { year: '2024', text: 'Сооснователь и руководитель арт-группы «6/57», г. Тула' },
               { year: '2025', text: 'Член Товарищества Тульских художников' },
+              { year: '2025', text: 'Резидент Тульского Дома Архитекторов' },
               { year: '2025', text: 'Резидент ремесленного пространства «Точка» (Тула) — провожу обучение и интенсивы по мозаике' },
             ].map((item, idx) => (
               <div key={idx} className="flex gap-6 items-start">
